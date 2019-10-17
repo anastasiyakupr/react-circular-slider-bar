@@ -20,7 +20,12 @@ class App extends Component {
     value: 0
   }
 
-  setValue = (n) => this.setState({value: +n.toFixed(2)});
+  setValue = (n) => this.setState({value: +(+n).toFixed(2)});
+
+  onImputChange = (e) => {
+    if (e.target.value < 100 && e.target.value >=0) return this.setValue(e.target.value);
+    e.preventDefaul;
+  }
 
   render() {
     return (
@@ -38,7 +43,7 @@ class App extends Component {
           onChange={value => this.setValue(value)}
           value={this.state.value}
         />
-        <p style={{ marginTop: 30}}>{this.state.value}</p>
+        <input type="number" value={this.state.value} onChange={this.onImputChange}></input>
         <button style={buttonStyle} onClick={() => this.setValue(0)}>reset</button>
         <button style={buttonStyle} onClick={() => this.setValue(50)}>half</button>
         <button style={buttonStyle} onClick={() => this.setValue(99.99)}>full</button>
