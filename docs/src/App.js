@@ -20,7 +20,7 @@ class App extends Component {
     value: 0
   }
 
-  setValue = (n) => this.setState({value: n});
+  setValue = (n) => this.setState({value: +n.toFixed(2)});
 
   render() {
     return (
@@ -35,7 +35,7 @@ class App extends Component {
         justifyContent: 'center'
       }}>
         <CircularSlider
-          onChange={value => this.setState({value})}
+          onChange={value => this.setValue(value)}
           value={this.state.value}
         />
         <p style={{ marginTop: 30}}>{this.state.value}</p>
