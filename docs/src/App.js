@@ -41,7 +41,7 @@ class App extends Component {
         <p style={{ marginTop: 30}}>{this.state.value}</p>
         <button style={buttonStyle} onClick={() => this.setValue(0)}>reset</button>
         <button style={buttonStyle} onClick={() => this.setValue(50)}>half</button>
-        <button style={buttonStyle} onClick={() => this.setValue(99)}>full</button>
+        <button style={buttonStyle} onClick={() => this.setValue(99.99)}>full</button>
       </div>
     );
   }
