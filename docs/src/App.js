@@ -27,6 +27,15 @@ class App extends Component {
     e.preventDefaul;
   }
 
+  inputStyle = {
+    marginTop: 30,
+    textAlign: "center",
+    border: 0,
+    paddingLeft: 14,
+    width: 49,
+    outline: 0,
+  }
+
   render() {
     return (
       <div style={{
@@ -43,7 +52,7 @@ class App extends Component {
           onChange={value => this.setValue(value)}
           value={this.state.value}
         />
-        <input type="number" value={this.state.value} onChange={this.onImputChange}></input>
+        <input type="number" style={this.inputStyle} value={this.state.value} onChange={this.onImputChange}></input>
         <button style={buttonStyle} onClick={() => this.setValue(0)}>reset</button>
         <button style={buttonStyle} onClick={() => this.setValue(50)}>half</button>
         <button style={buttonStyle} onClick={() => this.setValue(99.99)}>full</button>
